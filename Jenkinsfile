@@ -1,4 +1,4 @@
-node('docker') {
+node('docker-maven-build') {
     checkout scm
     stage('Preparation') {
         git 'https://github.com/guyoubin/demo.git'
