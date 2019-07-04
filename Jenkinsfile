@@ -1,4 +1,4 @@
-node('master') {
+node('docker') {
     checkout scm
     stage('Preparation') {
         git 'https://github.com/guyoubin/demo.git'
