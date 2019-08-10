@@ -1,4 +1,4 @@
-node('docker-agent-1') {
+node('ubuntu_git_maven') {
   stage('Poll') {
     checkout scm
   }
