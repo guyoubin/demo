@@ -8,10 +8,7 @@ node('docker-agent-1') {
     archive 'target/*.jar'
   }
   stage('Static Code Analysis'){
-    sh 'mvn clean verify sonar:sonar
-    -Dsonar.projectName=jw_test_project
-    -Dsonar.projectKey=jw_test_project
-    -Dsonar.projectVersion=$BUILD_NUMBER';
+    sh 'mvn clean verify sonar:sonar -Dsonar.projectName=jw_test_project -Dsonar.projectKey=jw -Dsonar.projectVersion=$BUILD_NUMBER';
   }
   stage ('Integration Test'){
     sh 'mvn clean verify -Dsurefire.skip=true';
