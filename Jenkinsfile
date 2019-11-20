@@ -13,6 +13,11 @@ pipeline {
          }
       }
       stage('Build') {
+         agent {
+            node {
+               label 'ubuntu_git_maven'
+            }
+         }
          steps {
             sh 'mvn -Dmaven.test.failure.ignore clean package'
          }
