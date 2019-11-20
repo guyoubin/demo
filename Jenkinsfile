@@ -1,5 +1,5 @@
 pipeline {
-   agent any
+   agent ubuntu_git_maven
 
    stages {
       stage('Hello') {
