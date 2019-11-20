@@ -1,8 +1,13 @@
 pipeline {
-   agent ubuntu_git_maven
+   agent none
 
    stages {
       stage('Hello') {
+         agent {
+            node {
+               label 'ubuntu_git_maven'
+            }
+         }
          steps {
             git url: 'https://github.com/guyoubin/demo.git'
          }
