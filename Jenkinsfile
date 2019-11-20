@@ -12,7 +12,7 @@ pipeline {
             git url: 'https://github.com/guyoubin/demo.git'
          }
       }
-      stage {
+      stage('Build') {
          steps {
             sh 'mvn -Dmaven.test.failure.ignore clean package'
          }
