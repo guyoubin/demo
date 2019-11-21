@@ -1,16 +1,24 @@
-node('feature') {
-    checkout scm
-    stage('Preparation') {
-        git 'https://github.com/guyoubin/demo.git'
-    }
-    stage('Build') {
-        withMaven(jdk: 'jw_jdk', maven: 'jw_maven') {
-            if (isUnix()) {
-                sh 'mvn -Dmaven.test.failure.ignore clean package '
-            }
-            else {
-                bat 'mvn -Dmaven.test.failure.ignore clean package'
-            }
-        }
-    }
+pipeline {
+   agent {
+      node {
+         label 'ubuntu_git_maven'
+      }
+   }
+   stages {
+      stage('Hello') {
+         steps {
+            git url: 'https://github.com/guyoubin/demo.git'
+         }
+      }
+      stage('Build') {
+         steps {
+            sh 'mvn -Dmaven.test.failure.ignore clean package'
+         }
+      }
+      stage('Static Code Analysis') {
+         steps {
+            sh 'mvn clean verify sonar:sonar'
+         }
+      }
+   }
 }
