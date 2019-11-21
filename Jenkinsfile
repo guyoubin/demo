@@ -1,7 +1,7 @@
 pipeline {
    agent {
       node {
-         label 'ubuntu_git_maven'
+         label 'master'
       }
    }
    stages {
