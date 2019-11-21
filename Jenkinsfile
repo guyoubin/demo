@@ -12,7 +12,7 @@ pipeline {
       }
       stage('Static Code Analysis') {
          steps {
-            sh 'mvn clean verify sonar:sonar'
+            sh 'mvn clean verify sonar:sonar -Dsonar.host.url=http://10.20.22.61:9000'
          }
       }
    }
