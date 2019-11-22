@@ -5,7 +5,7 @@ pipeline {
       }
    }
    stages {
-      stage('Hello') {
+      stage('Poll SCM') {
          steps {
             git url: 'https://github.com/guyoubin/demo.git'
          }
