@@ -1,9 +1,4 @@
 pipeline {
-   agent {
-      node {
-         label 'ubuntu_git_maven'
-      }
-   }
    stages {
       stage('Poll SCM') {
          steps {
