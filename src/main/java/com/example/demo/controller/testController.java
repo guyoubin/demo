@@ -20,9 +20,9 @@ public class testController {
         return "test_2";
     }
     
-    @RequestMapping({"/test"})
+    @RequestMapping({"/test3"})
     @ResponseBody
-    public String test() {
+    public String test_3() {
         return "Hello world";
     }
 }
