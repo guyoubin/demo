@@ -19,4 +19,10 @@ public class testController {
         System.out.println("....");
         return "test_2";
     }
+    
+    @RequestMapping({"/test"})
+    @ResponseBody
+    public String test() {
+        return "Hello world";
+    }
 }
